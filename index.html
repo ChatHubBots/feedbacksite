@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="assets/img/chathub.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/styles/index.css" />
+
+    <title>Chat Hub Feedback</title>
+  </head>
+  <body>
+    <div class="header">
+      <img src="assets/img/chathub.png" alt="chat hub logo" class="logo" />
+    </div>
+    <br />
+    <div class="info">
+      <h1>Chat Hub Feedback</h1>
+
+      <h2>Your feedback helps us improve Chat Hub</h2>
+    </div>
+    <div id="hr"></div>
+    <h1 class="yourId">Your ID: <span id="userId"></span></h1>
+
+    <div class="container">
+      <div class="form">
+        <div class="form-entry">
+          <h2 class="label">Which staff member helped you?</h2>
+          <select name="staffId" id="id-input">
+            <option value="" disabled selected>Choose a Staff Member</option>
+          </select>
+          <!-- <input
+            type="text"
+            name="staffId"
+            id="id-input"
+            placeholder="Discord ID"
+            maxlength="18"
+          /> -->
+        </div>
+        <div class="form-entry">
+          <h2 class="label">How would you rate your support experience?</h2>
+          <div class="rating">
+            <div class="rating-box" id="1"></div>
+            <div class="rating-box" id="2"></div>
+            <div class="rating-box" id="3"></div>
+            <div class="rating-box" id="4"></div>
+            <div class="rating-box" id="5"></div>
+            <div class="rating-label"><span id="rating">0</span><span id="slash"> / </span>5</div>
+          </div>
+        </div>
+        <div class="form-entry" id="centered-entry">
+          <h2 class="label">Please describe your support experience below.</h2>
+          <textarea name="feedback" id="feedback" cols="30" rows="7" placeholder="Type here..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button class="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; Chat Hub 2022</p>
+    </div>
+
+    <script src="scripts/index.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="assets/img/chathub.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/styles/index.css" />
+
+    <title>Thank You!</title>
+  </head>
+  <body>
+    <div class="header">
+      <img src="assets/img/chathub.png" alt="chat hub logo" class="logo" />
+    </div>
+    <br />
+    <div class="info">
+      <h1>Chat Hub Feedback</h1>
+
+      <h2>Your feedback helps us improve Chat Hub</h2>
+    </div>
+    <div id="hr"></div>
+    <div class="credit">
+      <h1>Thank you for your feedback!</h1>
+      <br />
+      <br />
+      <div class="staff">
+      <span id="staff-name"></span>
+        <span id="staffIdWrapper">(<span id="staffId"></span>)</span></span
+      >
+</div>
+      will be associated with this review. <br /><br /><br /><br />
+      <br />
+      <p id="safe">You can now safely close this page.</p>
+
+      <script>
+        let params = new URL(window.location.href).searchParams;
+        let id = params.get('id');
+        let name = params.get('name');
+
+        let staffName = document.getElementById('staff-name');
+        let staffId = document.getElementById('staffId');
+
+        staffName.innerText = name;
+        staffId.innerText = id;
+      </script>
+    </div>
+  </body>
+</html>
