@@ -66,10 +66,6 @@ submit.addEventListener('click', e => {
   if (!starRating) return alert('You must choose a rating');
   if (!fb) return alert('You must provide feedback');
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', `https://api.chathubfeedback.com/feedback?userId=${userId}&staffId=${staffId}&rating=${starRating}&review=${fb}`, true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify({}));
-
+  axios.post(`https://api.chathubfeedback.com/feedback?userId=${userId}&staffId=${staffId}&rating=${starRating}&review=${fb}`, {}, () => {});
   window.location = `/thanks.html?id=${staffId}&name=${encodeURIComponent(staffTag)}&userId=${userId}`;
 });
