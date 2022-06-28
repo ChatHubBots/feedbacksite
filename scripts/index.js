@@ -20,24 +20,12 @@ userId.innerText = id;
 
 let staff = [
   {
-    id: '1',
+    id: '689233726319624227',
     tag: 'Domm#7800',
-  },
-  {
-    id: '2',
-    tag: 'asqry#3843',
   },
   {
     id: '334392742266535957',
     tag: 'rugs#1014',
-  },
-  {
-    id: '4',
-    tag: 'pie#1234',
-  },
-  {
-    id: '5',
-    tag: 'doit#6969',
   },
 ];
 
@@ -77,6 +65,11 @@ submit.addEventListener('click', e => {
   if (!staffId) return alert('You must choose a staff member');
   if (!starRating) return alert('You must choose a rating');
   if (!fb) return alert('You must provide feedback');
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', `https://api.chathubfeedback.com/feedback?userId=${userId}&staffId=${staffId}&rating=${starRating}&review=${fb}`, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({}));
 
   window.location = `/thanks.html?id=${staffId}&name=${encodeURIComponent(staffTag)}&userId=${userId}`;
 });
