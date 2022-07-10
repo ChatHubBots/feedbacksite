@@ -18,20 +18,13 @@ if (!id || id == 'null' || id.length < 17) {
 
 userId.innerText = id;
 
-let staff = [
-  {
-    id: '689233726319624227',
-    tag: 'Domm#7800',
-  },
-  {
-    id: '334392742266535957',
-    tag: 'rugs#1014',
-  },
-];
-
-staff.forEach(staff => {
-  staffSelect.innerHTML += `<option value="${staff.id}">${staff.tag}</option>`;
-});
+window.onload = async () => {
+  let { data } = await axios.get('https://api.chathubfeedback.com/staff');
+  console.log(data);
+  data.forEach(staff => {
+    staffSelect.innerHTML += `<option value="${staff.member.id}">${staff.member.tag}</option>`;
+  });
+};
 
 ratingBoxes.forEach(element =>
   element.addEventListener('click', e => {
