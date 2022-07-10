@@ -92,6 +92,10 @@ body {
   color: var(--text-light);
 }
 
+.warning {
+  text-align: center;
+}
+
 .form-entry {
   width: 100%;
   display: flex;
